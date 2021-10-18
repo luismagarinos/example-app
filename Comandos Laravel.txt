@@ -1,0 +1,3 @@
+Crear Controlador
+
+php artisan make:controller HomeController

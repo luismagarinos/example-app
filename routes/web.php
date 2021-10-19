@@ -18,8 +18,8 @@ use App\Http\Controllers\CursoController;
 
 Route::get('/', HomeController::class);
 
-Route::get('curso', [CursoController::class, 'index']);
-Route::get('curso/create', [CursoController::class, "create"]);
-Route::get('curso/{curso}', [CursoController::class, "show"]);
+Route::get('cursos', [CursoController::class, 'index']);
+Route::get('cursos/create', [CursoController::class, "create"]);
+Route::get('cursos/{curso}', [CursoController::class, "show"]);
 
 

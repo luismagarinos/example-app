@@ -8,14 +8,14 @@ class CursoController extends Controller
 {
     public function index()
     {
-        return "Pagina curso principal";
+        return view('cursos.index');
     }
     public function create()
     {
-        return "Pagina crear curso";
+        return view('cursos.create');
     }
     public function show($curso)
     {
-        return "Pagina mostrar curso $curso";
+        return view('cursos.show', ['curso' => $curso]);
     }
 }

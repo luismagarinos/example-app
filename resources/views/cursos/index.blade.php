@@ -1,4 +1,14 @@
-<!DOCTYPE html>
+@extends('layouts.plantilla')
+
+@section('title','curso principal')
+
+@section('content')
+
+    <h1>Pagina curso principal</h1>
+
+@endsection
+
+crear curso<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,6 +17,6 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Pagina mostrar curso <?php echo $curso; ?></h1>
+    <h1>Pagina curso principal</h1>
 </body>
 </html>

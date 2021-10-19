@@ -1,3 +1,5 @@
+@extends('layouts.planilla')
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

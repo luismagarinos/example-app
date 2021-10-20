@@ -17,7 +17,7 @@ class Cursos extends Migration
             $table->id();
             $table->string('name');
             $table->text('descripcion');
-
+            $table->text('categoria');
             $table->timestamps();
         });
     }

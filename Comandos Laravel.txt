@@ -8,4 +8,56 @@ php artisan migrate
 
 Crear nuestras propias migraciones: crear tablas para migrar
 
-php artisan make:migration curso
+php artisan make:migration cursos
+
+Revertir migraciones. NO UTILIZAR EN PRODUCCION
+
+php artisan migrate:rollback        // NO UTILIZAR EN PRODUCCION
+
+Actualizar una table que ya fue migrada, borra y vuelve a genera: NO UTILIZAR EN PRODUCCION
+
+php artisan migrate:fresh       // NO UTILIZAR EN PRODUCCION
+php artisan migrate:refresh       // NO UTILIZAR EN PRODUCCION
+
+
+Actualizar una table que ya fue migrada, solo actualizar los ultimos cambios: NO UTILIZAR EN PRODUCCION
+
+php artisan make:migration add_avatar_to_users_table
+
+Cambiar propiedad de una columna:
+
+1°  composer require doctrine/dbal
+2°  php artisan make:migration cambiar_propiedades_to_usars_table
+
+Crear una Entidad de un Modelo
+
+php artisan make:model Curso
+
+Trabajar en la linea de comando con Tinker
+
+php artisan tinker
+
+Para llamar a un Modelo distinto que la tabla agregamos una propidead al Modelo:
+
+protected $table = "nombre de la tabla a administrar";
+
+
+Elimar todas las tablas creadas en la base de datos
+
+php artisan migrate:reset
+
+Rellenar una tabla con los registros generados en database seeders
+
+php artisan db:seed
+
+Crear un seeder separdo por cada Modelo
+
+php artisan make:seeder CursoSeeder
+
+Crear un factori para llenar una tabla de registros automaticamente
+
+php artisan make:factory CursoFactory
+
+Borra tablas y genera los seeder automaticamente
+
+php artisan migrate:fresh --seed

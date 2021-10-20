@@ -1,3 +1,11 @@
 Crear Controlador
 
 php artisan make:controller HomeController
+
+Migrar las tablas que ya existen: recorre las migraciones creadas y ejecuta el merodo "up()"
+
+php artisan migrate
+
+Crear nuestras propias migraciones: crear tablas para migrar
+
+php artisan make:migration curso

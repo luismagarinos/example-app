@@ -76,3 +76,9 @@ $cursos = Curso::where('name', 'like', '% accusamus %')->get();
 
 Pasar una variable a un array en forma compacta
 compact('curos')
+
+Borra cache
+
+php artisan config:cache
+php artisan route:cache 
+php artisan view:cache

@@ -41,7 +41,6 @@ Para llamar a un Modelo distinto que la tabla agregamos una propidead al Modelo:
 
 protected $table = "nombre de la tabla a administrar";
 
-
 Elimar todas las tablas creadas en la base de datos
 
 php artisan migrate:reset
@@ -61,3 +60,19 @@ php artisan make:factory CursoFactory
 Borra tablas y genera los seeder automaticamente
 
 php artisan migrate:fresh --seed
+
+Metodos ORM Eloquent
+
+$cursos = Curso::all();
+$cursos = Curso::where('categoria', 'Diseño Web')->orderBy('name', 'asc')->get();
+$cursos = Curso::where('categoria', 'Diseño Web')->orderBy('name', 'asc')->first();
+$cursos = Curso::select('name', 'descripcion')->where('categoria', 'Diseño Web')->orderBy('name', 'asc')->first();
+$cursos = Curso::select('name as titulo', 'descripcion')->where('categoria', 'Diseño Web')->orderBy('name', 'asc')->first();
+$cursos = Curso::select('name as titulo', 'descripcion')->where('categoria', 'Diseño Web')->orderBy('name', 'asc')->take(2)->get();
+$cursos = Curso::find(1);  // busca por el id=1
+$cursos = Curso::where('id', '>', 45)->get();
+$cursos = Curso::where('name', 'like', '% accusamus %')->get();
+
+
+Pasar una variable a un array en forma compacta
+compact('curos')

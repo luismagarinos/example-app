@@ -7,6 +7,7 @@
     <title>@yield('title')</title>
     <!-- favicon -->
     <!-- estilos -->
+
 </head>
 <body>
     <!-- header -->

@@ -80,6 +80,9 @@ compact('curos')
 Borra cache
 
 php artisan config:cache
-php artisan route:cache 
+php artisan route:cache
 php artisan view:cache
 
+Crear formularios de Validacion
+
+php artisan make:request StoreCurso

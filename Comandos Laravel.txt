@@ -86,3 +86,7 @@ php artisan view:cache
 Crear formularios de Validacion
 
 php artisan make:request StoreCurso
+
+Comando para ver por consola todas las rutas
+
+php artisan r:l

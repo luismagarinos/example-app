@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use Symfony\Component\Routing\Route as RoutingRoute;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CursoController;
+use App\Mail\ContactanosMailable;
+use Illuminate\Support\Facades\Mail;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +18,7 @@ use App\Http\Controllers\CursoController;
 |
 */
 
-Route::get('/', HomeController::class);
+Route::get('/', HomeController::class)->name('home');
 
 /* Route::get('cursos', [CursoController::class, 'index'])->name('cursos.index');
 Route::get('cursos/create', [CursoController::class, "create"])->name('cursos.create');
@@ -30,3 +32,11 @@ Route::delete('cursos/{curso}',  [CursoController::class, "destroy"])->name('cur
 // Route::resource('asignaturas', CursoController::class)->parameters(["asignaturas" => "curso"])->names("cursos");
  
 Route::resource('cursos', CursoController::class);
+
+Route::view('nosotros', 'nosotros')->name('nosotros');
+
+Route::get('contactanos', function () {
+    $correo = new ContactanosMailable;
+    Mail::to('luismagarinos@yahoo.com.ar')->send($correo);
+    return 'Mensaje enviado';
+});

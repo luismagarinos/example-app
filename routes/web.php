@@ -1,11 +1,10 @@
 <?php
 
+use App\Http\Controllers\ContactanosController;
 use Illuminate\Support\Facades\Route;
 use Symfony\Component\Routing\Route as RoutingRoute;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CursoController;
-use App\Mail\ContactanosMailable;
-use Illuminate\Support\Facades\Mail;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,8 +34,5 @@ Route::resource('cursos', CursoController::class);
 
 Route::view('nosotros', 'nosotros')->name('nosotros');
 
-Route::get('contactanos', function () {
-    $correo = new ContactanosMailable;
-    Mail::to('luismagarinos@yahoo.com.ar')->send($correo);
-    return 'Mensaje enviado';
-});
+Route::get('contactanos', [ContactanosController::class, 'index'])->name('contactanos.index');
+Route::post('contactanos', [ContactanosController::class, 'store'])->name('contactanos.store');

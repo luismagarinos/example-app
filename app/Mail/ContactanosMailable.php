@@ -2,6 +2,7 @@
 
 namespace App\Mail;
 
+use GuzzleHttp\Psr7\Request;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
@@ -13,15 +14,17 @@ class ContactanosMailable extends Mailable
 
     public $subject = "Informacion de contacto";
 
+    public $contacto;
+
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($contacto)
     {
-        //
+        $this->contacto = $contacto;
     }
 
     /**
